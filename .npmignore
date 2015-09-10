@@ -7,3 +7,4 @@ webpack.config.js
 *.tgz
 Gruntfile.js
 swapi.min.js
+build
