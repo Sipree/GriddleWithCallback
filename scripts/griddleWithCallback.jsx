@@ -2,6 +2,10 @@ var React = require('react');
 var _ = require('underscore');
 var Griddle = require('griddle-react');
 
+var setDefault = function(original, value){
+    return typeof original === 'undefined' ? value : original;
+};
+
 var GriddleWithCallback = React.createClass({
 	getDefaultProps: function(){
 		return {
@@ -187,7 +191,7 @@ var GriddleWithCallback = React.createClass({
 		return <Griddle {...this.props} useExternal={true} externalSetPage={this.setPage}
 			externalChangeSort={this.changeSort} externalSetFilter={this.setFilter}
 			externalSetPageSize={this.setPageSize} externalMaxPage={this.state.maxPage}
-			externalCurrentPage={this.state.page} results={this.state.results} tableClassName="table" resultsPerPage={this.state.pageSize}
+			externalCurrentPage={this.state.page} results={this.state.results} tableClassName={this.props.tableClassName} resultsPerPage={this.state.pageSize}
 			externalSortColumn={this.state.sortColumn} externalSortAscending={this.state.sortAscending}
 			externalLoadingComponent={this.props.loadingComponent} externalIsLoading={this.state.isLoading} />
   }
