@@ -4,6 +4,7 @@
   "description": "A Griddle wrapper for obtaining external data with a callback.",
   "main": "modules/griddleWithCallback.jsx.js",
   "scripts": {
+    "build": "babel ./scripts --out-dir ./modules",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
